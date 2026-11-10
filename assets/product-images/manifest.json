@@ -1,0 +1,652 @@
+[
+ {
+  "product_id": "groundnut-oil",
+  "view": "front",
+  "file": "groundnut-oil-front.webp",
+  "card_file": "groundnut-oil-front-card.webp",
+  "storage_path": "groundnut-oil-front.webp",
+  "source": "5cf511b3-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 143698
+ },
+ {
+  "product_id": "groundnut-oil",
+  "view": "back",
+  "file": "groundnut-oil-back.webp",
+  "card_file": "groundnut-oil-back-card.webp",
+  "storage_path": "groundnut-oil-back.webp",
+  "source": "c20d410c-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 142806
+ },
+ {
+  "product_id": "coconut-oil",
+  "view": "front",
+  "file": "coconut-oil-front.webp",
+  "card_file": "coconut-oil-front-card.webp",
+  "storage_path": "coconut-oil-front.webp",
+  "source": "9d9b29c0-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 152610
+ },
+ {
+  "product_id": "coconut-oil",
+  "view": "back",
+  "file": "coconut-oil-back.webp",
+  "card_file": "coconut-oil-back-card.webp",
+  "storage_path": "coconut-oil-back.webp",
+  "source": "e354851e-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 143740
+ },
+ {
+  "product_id": "mustard-oil",
+  "view": "front",
+  "file": "mustard-oil-front.webp",
+  "card_file": "mustard-oil-front-card.webp",
+  "storage_path": "mustard-oil-front.webp",
+  "source": "2c1d6903-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 127806
+ },
+ {
+  "product_id": "mustard-oil",
+  "view": "back",
+  "file": "mustard-oil-back.webp",
+  "card_file": "mustard-oil-back-card.webp",
+  "storage_path": "mustard-oil-back.webp",
+  "source": "39ff1667-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 139066
+ },
+ {
+  "product_id": "sesame-oil",
+  "view": "front",
+  "file": "sesame-oil-front.webp",
+  "card_file": "sesame-oil-front-card.webp",
+  "storage_path": "sesame-oil-front.webp",
+  "source": "3f298cdd-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 135548
+ },
+ {
+  "product_id": "sesame-oil",
+  "view": "back",
+  "file": "sesame-oil-back.webp",
+  "card_file": "sesame-oil-back-card.webp",
+  "storage_path": "sesame-oil-back.webp",
+  "source": "d4d36449-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 139170
+ },
+ {
+  "product_id": "sunflower-oil",
+  "view": "front",
+  "file": "sunflower-oil-front.webp",
+  "card_file": "sunflower-oil-front-card.webp",
+  "storage_path": "sunflower-oil-front.webp",
+  "source": "b6446267-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 117754
+ },
+ {
+  "product_id": "sunflower-oil",
+  "view": "back",
+  "file": "sunflower-oil-back.webp",
+  "card_file": "sunflower-oil-back-card.webp",
+  "storage_path": "sunflower-oil-back.webp",
+  "source": "ffa051a1-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 117816
+ },
+ {
+  "product_id": "mix-chhatua-sugar",
+  "view": "front",
+  "file": "mix-chhatua-sugar-front.webp",
+  "card_file": "mix-chhatua-sugar-front-card.webp",
+  "storage_path": "mix-chhatua-sugar-front.webp",
+  "source": "b78be282-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 167174
+ },
+ {
+  "product_id": "mix-chhatua-sugar",
+  "view": "back",
+  "file": "mix-chhatua-sugar-back.webp",
+  "card_file": "mix-chhatua-sugar-back-card.webp",
+  "storage_path": "mix-chhatua-sugar-back.webp",
+  "source": "10a09c66-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 150072
+ },
+ {
+  "product_id": "ragi-chhatua",
+  "view": "front",
+  "file": "ragi-chhatua-front.webp",
+  "card_file": "ragi-chhatua-front-card.webp",
+  "storage_path": "ragi-chhatua-front.webp",
+  "source": "127ec49e-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 245658
+ },
+ {
+  "product_id": "ragi-chhatua",
+  "view": "back",
+  "file": "ragi-chhatua-back.webp",
+  "card_file": "ragi-chhatua-back-card.webp",
+  "storage_path": "ragi-chhatua-back.webp",
+  "source": "61ae9a49-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 229152
+ },
+ {
+  "product_id": "chickpea-chhatua",
+  "view": "front",
+  "file": "chickpea-chhatua-front.webp",
+  "card_file": "chickpea-chhatua-front-card.webp",
+  "storage_path": "chickpea-chhatua-front.webp",
+  "source": "af80e0cf-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 259338
+ },
+ {
+  "product_id": "chickpea-chhatua",
+  "view": "back",
+  "file": "chickpea-chhatua-back.webp",
+  "card_file": "chickpea-chhatua-back-card.webp",
+  "storage_path": "chickpea-chhatua-back.webp",
+  "source": "f7b8e1a2-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 244210
+ },
+ {
+  "product_id": "special-chhatua",
+  "view": "front",
+  "file": "special-chhatua-front.webp",
+  "card_file": "special-chhatua-front-card.webp",
+  "storage_path": "special-chhatua-front.webp",
+  "source": "17b897c5-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 214156
+ },
+ {
+  "product_id": "special-chhatua",
+  "view": "back",
+  "file": "special-chhatua-back.webp",
+  "card_file": "special-chhatua-back-card.webp",
+  "storage_path": "special-chhatua-back.webp",
+  "source": "3ca5d2f3-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 201586
+ },
+ {
+  "product_id": "mix-chhatua-nosugar",
+  "view": "front",
+  "file": "mix-chhatua-nosugar-front.webp",
+  "card_file": "mix-chhatua-nosugar-front-card.webp",
+  "storage_path": "mix-chhatua-nosugar-front.webp",
+  "source": "9349b1fa-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 252770
+ },
+ {
+  "product_id": "mix-chhatua-nosugar",
+  "view": "back",
+  "file": "mix-chhatua-nosugar-back.webp",
+  "card_file": "mix-chhatua-nosugar-back-card.webp",
+  "storage_path": "mix-chhatua-nosugar-back.webp",
+  "source": "992cccea-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 207918
+ },
+ {
+  "product_id": "multigrain-aata",
+  "view": "front",
+  "file": "multigrain-aata-front.webp",
+  "card_file": "multigrain-aata-front-card.webp",
+  "storage_path": "multigrain-aata-front.webp",
+  "source": "f3ff97fc-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 229038
+ },
+ {
+  "product_id": "multigrain-aata",
+  "view": "back",
+  "file": "multigrain-aata-back.webp",
+  "card_file": "multigrain-aata-back-card.webp",
+  "storage_path": "multigrain-aata-back.webp",
+  "source": "7de9b41a-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 221380
+ },
+ {
+  "product_id": "besan",
+  "view": "front",
+  "file": "besan-front.webp",
+  "card_file": "besan-front-card.webp",
+  "storage_path": "besan-front.webp",
+  "source": "300205ab-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 196368
+ },
+ {
+  "product_id": "besan",
+  "view": "back",
+  "file": "besan-back.webp",
+  "card_file": "besan-back-card.webp",
+  "storage_path": "besan-back.webp",
+  "source": "6d6b5020-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 191536
+ },
+ {
+  "product_id": "turmeric-powder",
+  "view": "front",
+  "file": "turmeric-powder-front.webp",
+  "card_file": "turmeric-powder-front-card.webp",
+  "storage_path": "turmeric-powder-front.webp",
+  "source": "c19e5531-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 247838
+ },
+ {
+  "product_id": "turmeric-powder",
+  "view": "back",
+  "file": "turmeric-powder-back.webp",
+  "card_file": "turmeric-powder-back-card.webp",
+  "storage_path": "turmeric-powder-back.webp",
+  "source": "415f09a5-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 251562
+ },
+ {
+  "product_id": "chilli-powder",
+  "view": "front",
+  "file": "chilli-powder-front.webp",
+  "card_file": "chilli-powder-front-card.webp",
+  "storage_path": "chilli-powder-front.webp",
+  "source": "6281cfab-image.jpg",
+  "source_size": [
+   1024,
+   1024
+  ],
+  "bytes": 109416
+ },
+ {
+  "product_id": "chilli-powder",
+  "view": "back",
+  "file": "chilli-powder-back.webp",
+  "card_file": "chilli-powder-back-card.webp",
+  "storage_path": "chilli-powder-back.webp",
+  "source": "7c52eaf1-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 234290
+ },
+ {
+  "product_id": "jeera-powder",
+  "view": "front",
+  "file": "jeera-powder-front.webp",
+  "card_file": "jeera-powder-front-card.webp",
+  "storage_path": "jeera-powder-front.webp",
+  "source": "85d15e25-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 212676
+ },
+ {
+  "product_id": "jeera-powder",
+  "view": "back",
+  "file": "jeera-powder-back.webp",
+  "card_file": "jeera-powder-back-card.webp",
+  "storage_path": "jeera-powder-back.webp",
+  "source": "8d6b6d62-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 220344
+ },
+ {
+  "product_id": "triphala-churna",
+  "view": "front",
+  "file": "triphala-churna-front.webp",
+  "card_file": "triphala-churna-front-card.webp",
+  "storage_path": "triphala-churna-front.webp",
+  "source": "b26c4d22-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 145906
+ },
+ {
+  "product_id": "triphala-churna",
+  "view": "back",
+  "file": "triphala-churna-back.webp",
+  "card_file": "triphala-churna-back-card.webp",
+  "storage_path": "triphala-churna-back.webp",
+  "source": "49904d13-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 148052
+ },
+ {
+  "product_id": "moong-dal",
+  "view": "front",
+  "file": "moong-dal-front.webp",
+  "card_file": "moong-dal-front-card.webp",
+  "storage_path": "moong-dal-front.webp",
+  "source": "c8bdb855-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 222426
+ },
+ {
+  "product_id": "moong-dal",
+  "view": "back",
+  "file": "moong-dal-back.webp",
+  "card_file": "moong-dal-back-card.webp",
+  "storage_path": "moong-dal-back.webp",
+  "source": "bb2f4005-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 223616
+ },
+ {
+  "product_id": "blackgram-dal",
+  "view": "front",
+  "file": "blackgram-dal-front.webp",
+  "card_file": "blackgram-dal-front-card.webp",
+  "storage_path": "blackgram-dal-front.webp",
+  "source": "e81b9b9a-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 226812
+ },
+ {
+  "product_id": "blackgram-dal",
+  "view": "back",
+  "file": "blackgram-dal-back.webp",
+  "card_file": "blackgram-dal-back-card.webp",
+  "storage_path": "blackgram-dal-back.webp",
+  "source": "db8fa71d-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 220618
+ },
+ {
+  "product_id": "splitchickpea-dal",
+  "view": "front",
+  "file": "splitchickpea-dal-front.webp",
+  "card_file": "splitchickpea-dal-front-card.webp",
+  "storage_path": "splitchickpea-dal-front.webp",
+  "source": "cd11c422-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 202422
+ },
+ {
+  "product_id": "splitchickpea-dal",
+  "view": "back",
+  "file": "splitchickpea-dal-back.webp",
+  "card_file": "splitchickpea-dal-back-card.webp",
+  "storage_path": "splitchickpea-dal-back.webp",
+  "source": "d4c41823-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 208548
+ },
+ {
+  "product_id": "blackgram-wadi",
+  "view": "front",
+  "file": "blackgram-wadi-front.webp",
+  "card_file": "blackgram-wadi-front-card.webp",
+  "storage_path": "blackgram-wadi-front.webp",
+  "source": "0d49b9fa-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 233068
+ },
+ {
+  "product_id": "blackgram-wadi",
+  "view": "back",
+  "file": "blackgram-wadi-back.webp",
+  "card_file": "blackgram-wadi-back-card.webp",
+  "storage_path": "blackgram-wadi-back.webp",
+  "source": "21a067e1-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 230570
+ },
+ {
+  "product_id": "milet-papad",
+  "view": "front",
+  "file": "milet-papad-front.webp",
+  "card_file": "milet-papad-front-card.webp",
+  "storage_path": "milet-papad-front.webp",
+  "source": "67ef4ca6-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 361722
+ },
+ {
+  "product_id": "milet-papad",
+  "view": "back",
+  "file": "milet-papad-back.webp",
+  "card_file": "milet-papad-back-card.webp",
+  "storage_path": "milet-papad-back.webp",
+  "source": "c9a81325-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 360550
+ },
+ {
+  "product_id": "mustard-pidia",
+  "view": "front",
+  "file": "mustard-pidia-front.webp",
+  "card_file": "mustard-pidia-front-card.webp",
+  "storage_path": "mustard-pidia-front.webp",
+  "source": "52dbb4b8-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 262718
+ },
+ {
+  "product_id": "mustard-pidia",
+  "view": "back",
+  "file": "mustard-pidia-back.webp",
+  "card_file": "mustard-pidia-back-card.webp",
+  "storage_path": "mustard-pidia-back.webp",
+  "source": "9b07631d-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 256388
+ },
+ {
+  "product_id": "lemongrass-tea",
+  "view": "front",
+  "file": "lemongrass-tea-front.webp",
+  "card_file": "lemongrass-tea-front-card.webp",
+  "storage_path": "lemongrass-tea-front.webp",
+  "source": "a0caf771-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 171802
+ },
+ {
+  "product_id": "lemongrass-tea",
+  "view": "back",
+  "file": "lemongrass-tea-back.webp",
+  "card_file": "lemongrass-tea-back-card.webp",
+  "storage_path": "lemongrass-tea-back.webp",
+  "source": "f161ca6b-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 180950
+ },
+ {
+  "product_id": "combo-cooking-essentials",
+  "view": "front",
+  "file": "combo-cooking-essentials-front.webp",
+  "card_file": "combo-cooking-essentials-front-card.webp",
+  "storage_path": "combo-cooking-essentials-front.webp",
+  "source": "09644b78-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 240896
+ },
+ {
+  "product_id": "combo-cooking-essentials",
+  "view": "back",
+  "file": "combo-cooking-essentials-back.webp",
+  "card_file": "combo-cooking-essentials-back-card.webp",
+  "storage_path": "combo-cooking-essentials-back.webp",
+  "source": "3167c69f-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 227400
+ },
+ {
+  "product_id": "combo-breakfast-kit",
+  "view": "front",
+  "file": "combo-breakfast-kit-front.webp",
+  "card_file": "combo-breakfast-kit-front-card.webp",
+  "storage_path": "combo-breakfast-kit-front.webp",
+  "source": "76e88680-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 220854
+ },
+ {
+  "product_id": "combo-breakfast-kit",
+  "view": "back",
+  "file": "combo-breakfast-kit-back.webp",
+  "card_file": "combo-breakfast-kit-back-card.webp",
+  "storage_path": "combo-breakfast-kit-back.webp",
+  "source": "97ddf433-image.png",
+  "source_size": [
+   2048,
+   2048
+  ],
+  "bytes": 234760
+ }
+]

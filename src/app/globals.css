@@ -1,0 +1,481 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  /* anchors and focus jumps land below the sticky header */
+  scroll-padding-top: 96px;
+}
+
+/* Skip link: invisible until a keyboard user tabs to it. */
+.skip-link {
+  position: fixed;
+  left: 12px;
+  top: -64px;
+  z-index: 10000;
+  padding: 10px 16px;
+  background: #29231F;
+  color: #FFFDF8;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+}
+.skip-link:focus {
+  top: 12px;
+}
+
+/* iOS Safari zooms the page when a field under 16px is focused. */
+@media (max-width: 767px) {
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+body {
+  background: #F7F2E9;
+  color: #29231F;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Paper grain over the whole page: a fixed, non-interactive layer at very
+   low opacity so it reads as material, not dirt. Static (no animation). */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.55;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .13  0 0 0 0 .11  0 0 0 0 .09  0 0 0 .05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+::selection {
+  background: #DCCBA4;
+  color: #29231F;
+}
+
+/* One easing curve for every interactive element, so nothing feels
+   instant next to something animated. */
+button, a, input, textarea, select {
+  transition-property: color, background-color, border-color, opacity, transform, box-shadow;
+  transition-timing-function: cubic-bezier(.22, .9, .35, 1);
+  transition-duration: 160ms;
+}
+
+/* Tactile press feedback on real buttons only. */
+button:not(:disabled):active {
+  transform: scale(0.97);
+}
+
+:focus-visible {
+  outline: 2px solid #B6503B;
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------
+   Design system components — the reusable building blocks the storefront
+   is composed from. Matching React wrappers live in components/ui.tsx.
+------------------------------------------------------------------- */
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-[1240px] px-5 md:px-8;
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-eyebrow text-red;
+  }
+
+  .heading-display {
+    @apply font-serif font-bold leading-[1.04] tracking-tight text-ink;
+  }
+
+  .heading-section {
+    @apply font-serif font-semibold leading-[1.1] tracking-tight text-ink text-[30px] md:text-[42px];
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 text-[13px] font-semibold uppercase tracking-[.08em] transition-colors duration-200 disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-red text-warm hover:bg-red-dark;
+  }
+  .btn-dark {
+    @apply btn bg-ink text-warm hover:bg-leaf;
+  }
+  .btn-secondary {
+    @apply btn border border-ink/70 text-ink hover:bg-ink hover:text-warm;
+  }
+  .btn-light {
+    @apply btn bg-warm text-ink hover:bg-turmeric;
+  }
+
+  .badge {
+    @apply inline-block bg-ink px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-[.1em] text-warm;
+  }
+  .badge-turmeric {
+    @apply badge bg-turmeric text-ink;
+  }
+  .badge-leaf {
+    @apply badge bg-leaf text-warm;
+  }
+
+  .pill {
+    @apply inline-flex items-center border border-line px-3.5 py-2 text-[12px] font-medium text-ink-soft transition-colors hover:border-ink hover:text-ink;
+  }
+  .pill-active {
+    @apply border-ink bg-ink text-warm hover:text-warm;
+  }
+
+  .divider {
+    @apply h-px w-full bg-line;
+  }
+
+  .price {
+    @apply font-sans font-semibold tabular-nums text-ink;
+  }
+  .meta-mono {
+    @apply font-mono text-[11px] uppercase tracking-[.08em] text-ink-soft;
+  }
+
+  .section-pad {
+    @apply py-12 md:py-20;
+  }
+  .heading-statement {
+    @apply font-serif font-semibold leading-[.98] tracking-[-0.03em] text-ink text-[38px] sm:text-[52px] md:text-[72px] lg:text-[92px];
+  }
+}
+
+/* Hide scrollbars on horizontal rails while keeping them scrollable. */
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Safe-area padding for the fixed mobile bottom nav (iPhone home bar). */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Scroll-reveal — elements start slightly low + transparent and settle
+   in when the Reveal component adds .is-visible. */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s cubic-bezier(.22,.9,.35,1), transform .7s cubic-bezier(.22,.9,.35,1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Clip reveal: a block "uncovers" bottom-to-top. Editorial moments only. */
+.clip-reveal {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 0.9s cubic-bezier(.22,.9,.35,1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.clip-reveal.is-visible {
+  clip-path: inset(0 0 0 0);
+}
+
+/* Route transition, applied by app/template.tsx on every navigation. */
+.page-enter {
+  animation: pageIn .22s cubic-bezier(.22,.9,.35,1) both;
+}
+
+/* Brand-story line: grows downward as the section is scrolled through. */
+.story-line {
+  height: calc(var(--fill, 0) * 100%);
+}
+
+/* Marquee track pauses on hover so it can actually be read. */
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Subtle paper grain for editorial sections — an inline SVG noise
+   filter, so no extra image request. */
+.grain {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .13  0 0 0 0 .11  0 0 0 0 .09  0 0 0 .06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Growing progress line for the homepage "Source → Process → Pack →
+   Deliver" section. Height on mobile (vertical line), scaleX on desktop
+   (horizontal) — driven by a single --fill custom property set in JS, so
+   there's no server/client branching that could cause a hydration
+   mismatch. */
+.process-fill {
+  height: calc(var(--fill, 0) * 100%);
+}
+@media (min-width: 768px) {
+  .process-fill {
+    height: 100%;
+    transform-origin: left;
+    transform: scaleX(var(--fill, 0));
+  }
+}
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes viewFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.view-fade {
+  animation: viewFadeIn 0.32s cubic-bezier(.22, .9, .35, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .clip-reveal {
+    clip-path: none;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Opening splash (see components/SplashScreen.tsx)
+------------------------------------------------------------------- */
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F7F2E9;
+  opacity: 1;
+  transition: opacity 550ms cubic-bezier(.4, 0, .2, 1);
+  /* failsafe: hide after 4.5s even if scripts never run */
+  animation: splashFailsafe 0s linear 4.5s forwards;
+}
+.splash.is-leaving {
+  opacity: 0;
+  pointer-events: none;
+}
+.splash.is-leaving .splash-stack {
+  transform: scale(1.06);
+}
+html.splash-skip .splash {
+  display: none;
+}
+.splash-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 44%, rgba(220, 203, 164, .55) 0%, rgba(220, 203, 164, 0) 46%),
+    radial-gradient(circle at 50% 100%, rgba(182, 80, 59, .10) 0%, rgba(182, 80, 59, 0) 55%);
+  animation: splashGlow 1400ms ease-out both;
+}
+.splash-stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 24px;
+  transition: transform 550ms cubic-bezier(.4, 0, .2, 1);
+}
+.splash-emblem {
+  position: relative;
+  width: min(46vw, 210px);
+  aspect-ratio: 1;
+}
+.splash-ring {
+  position: absolute;
+  inset: -9%;
+  width: 118%;
+  height: 118%;
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+.splash-ring circle {
+  stroke: #B49A6A;
+  stroke-width: .9;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: splashRing 1100ms cubic-bezier(.65, 0, .35, 1) 150ms forwards;
+}
+.splash-logo-wrap {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  overflow: hidden;
+  animation: splashEmblem 900ms cubic-bezier(.22, .9, .35, 1) 250ms both;
+}
+.splash-logo {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.splash-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 253, 248, .65) 50%, transparent 65%);
+  transform: translateX(-120%);
+  animation: splashShine 900ms ease-in-out 950ms forwards;
+}
+.splash-name {
+  margin-top: 30px;
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(28px, 7vw, 38px);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #29231F;
+  animation: splashRise 700ms cubic-bezier(.22, .9, .35, 1) 800ms both;
+}
+.splash-rule {
+  width: 56px;
+  height: 1px;
+  margin-top: 14px;
+  background: #B49A6A;
+  transform: scaleX(0);
+  animation: splashRule 600ms cubic-bezier(.22, .9, .35, 1) 1050ms forwards;
+}
+.splash-tag {
+  margin-top: 14px;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: #6A635B;
+  animation: splashRise 700ms cubic-bezier(.22, .9, .35, 1) 1150ms both;
+}
+@keyframes splashRing {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes splashEmblem {
+  from { opacity: 0; transform: scale(.9); filter: blur(10px); }
+  to { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+@keyframes splashShine {
+  to { transform: translateX(120%); }
+}
+@keyframes splashRise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes splashRule {
+  to { transform: scaleX(1); }
+}
+@keyframes splashGlow {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes splashFailsafe {
+  to { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .splash-glow, .splash-logo-wrap, .splash-name, .splash-tag { animation: none; }
+  .splash-ring circle { animation: none; stroke-dashoffset: 0; }
+  .splash-rule { animation: none; transform: scaleX(1); }
+  .splash-shine { display: none; }
+  .splash.is-leaving .splash-stack { transform: none; }
+  .splash { transition-duration: 150ms; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Heritage Pantry (3D aisle + turntable) ---------- */
+.pantry-stage {
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(255, 253, 248, .9) 0%, rgba(247, 242, 233, 0) 62%),
+    linear-gradient(#F1E9DA, #EFE7D8);
+}
+.pantry-floor {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 30%;
+  background: linear-gradient(rgba(143, 59, 43, 0) 0%, rgba(143, 59, 43, .07) 100%), linear-gradient(#E8DED1, #DCCBA4 160%);
+  opacity: .7;
+}
+.pantry-plank {
+  height: 16px;
+  border-radius: 3px;
+  background: linear-gradient(#B98A63 0%, #8F5A3B 38%, #6E4229 100%);
+  box-shadow: 0 18px 28px -10px rgba(41, 35, 31, .35), inset 0 1px 0 rgba(255, 255, 255, .25);
+}
+.pantry-plate-img {
+  box-shadow: 0 14px 22px -12px rgba(41, 35, 31, .45), 0 2px 4px rgba(41, 35, 31, .12);
+  border-radius: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pantry-room { transition: none !important; }
+}
+.pantry-room { transform-style: preserve-3d; transition: transform 700ms cubic-bezier(.2, .7, .2, 1); }
+.pantry-pedestal {
+  position: absolute;
+  left: 50%;
+  bottom: -150px;
+  width: 600px;
+  height: 600px;
+  margin-left: -300px;
+  perspective: 900px;
+  pointer-events: none;
+}
+.pantry-pedestal-disc {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: rotateX(72deg);
+  background: conic-gradient(from 0deg, #B98A63, #8F5A3B, #B98A63, #6E4229, #B98A63);
+  box-shadow: inset 0 0 0 14px rgba(255, 253, 248, .14), 0 0 0 10px rgba(110, 66, 41, .28), 0 60px 80px rgba(41, 35, 31, .35);
+  animation: pedestalSpin 50s linear infinite;
+}
+@keyframes pedestalSpin {
+  to { transform: rotateX(72deg) rotateZ(360deg); }
+}
+
+/* Gallery: photo fades in when the shopper switches front/back or pack size. */
+.gallery-fade { animation: galleryFade 380ms ease-out both; }
+@keyframes galleryFade { from { opacity: 0; transform: scale(1.02); } to { opacity: 1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .gallery-fade { animation: none; } }
+.pack3d-sway { animation: packSway 7s ease-in-out infinite alternate; }
+@keyframes packSway { from { transform: rotateY(-14deg); } to { transform: rotateY(14deg); } }
+@media (prefers-reduced-motion: reduce) { .pack3d-sway { animation: none; } }
+.pantry-shadow {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  bottom: -7px;
+  height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(41, 35, 31, .42) 0%, rgba(41, 35, 31, 0) 70%);
+  filter: blur(3px);
+}
+
+/* Safety net: anything animated that has no specific reduced-motion rule of its own. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
