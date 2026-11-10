@@ -228,6 +228,8 @@ export default function ProductImage({
   priority?: boolean;
   /** "contain" keeps a whole package visible; "cover" fills (lifestyle). */
   fit?: "cover" | "contain";
+  /** Use the smaller pre-generated card image when available. */
+  thumb?: boolean;
 }) {
   const [failed, setFailed] = useState(false);
   const [thumbFailed, setThumbFailed] = useState(false);
