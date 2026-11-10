@@ -65,7 +65,7 @@ export async function GET(req: NextRequest) {
 
     const pdfBuffer = await generateInvoicePdf(normalizedOrder, items);
 
-    return new NextResponse(pdfBuffer, {
+    return new NextResponse(new Uint8Array(pdfBuffer), {
       headers: {
         "Content-Type": "application/pdf",
         "Content-Disposition": `inline; filename="invoice-${order.id}.pdf"`
